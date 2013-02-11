@@ -2,11 +2,6 @@
 
 from __future__ import unicode_literals
 
-import datetime
-import time
-
-from django.utils.http import http_date
-
 from .base import *
 
 # Settings read from Heroku env (see https://github.com/nigma/django-herokuify)
@@ -35,16 +30,6 @@ EMAIL_SUBJECT_PREFIX = "[{}]".format(SITE_NAME)
 # Database and cache settings
 DATABASES = herokuify.get_db_config()
 CACHES = herokuify.get_cache_config()
-
-# AWS access settings for S3 Boto storage
-AWS_QUERYSTRING_AUTH = False
-AWS_S3_SECURE_URLS = False
-AWS_S3_FILE_OVERWRITE = True
-AWS_HEADERS = {
-    "Expires": http_date(
-        time.mktime((datetime.datetime(2020, 12, 31)).timetuple())),
-    "Cache-Control": "max-age=%d" % (365 * 24 * 60 * 60),
-}
 
 # Setup storage for static files and media using S3 Boto backend
 DEFAULT_FILE_STORAGE = "herokuify.storage.S3MediaStorage"

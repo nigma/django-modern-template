@@ -120,4 +120,5 @@ AUTHENTICATION_BACKENDS = [
 from .common.account import *
 from .common.compress import *
 from .common.imagekit import *
+from .common.storage import *
 from .common.logs import LOGGING

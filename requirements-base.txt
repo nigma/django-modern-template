@@ -1,0 +1,26 @@
+-e git+https://github.com/django/django.git@stable/1.5.x#egg=Django
+Pillow==1.7.8
+psycopg2==2.4.6
+South==0.7.6
+boto==2.8.0
+pytz==2012j
+Werkzeug==0.8.3
+Fabric==1.5.3
+distribute>=0.6.34
+
+dj-cmd==0.3
+django-appconf==0.6
+django_compressor==1.2
+django-crispy-forms==1.2.3
+django-debug-toolbar==0.9.4
+django-easy-pjax==1.0
+django-extensions==1.0.3
+django-imagekit==2.0.2
+django-infinite-pagination==1.0
+django-model-utils==1.2.0
+django-postgrespool==0.2.4
+djangorestframework==2.1.17
+django-storages==1.1.6
+django-user-accounts==1.0b8
+django-forms-bootstrap==2.0.3.post1
+pinax-theme-bootstrap-account==1.0b2

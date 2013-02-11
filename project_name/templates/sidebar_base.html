@@ -1,0 +1,12 @@
+{% extends "site_base.html" %}
+
+{% block content_base %}
+    <div class="span8">
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+    </div>
+    <div class="span4">
+        {% block sidebar %}{% endblock %}
+    </div>
+{% endblock %}

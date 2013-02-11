@@ -1,0 +1,12 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Hello" %}{% endblock %}
+{% block body_id %}front-page{% endblock %}
+
+{% block content %}
+    <header class="bannerhead">
+        <div class="well banner"><h1>{% trans "Hello" %}</h1></div>
+    </header>
+{% endblock %}

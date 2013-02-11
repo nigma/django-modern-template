@@ -1,0 +1,9 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Home" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Welcome" %} {{ profile.get_full_name }}</h1>
+{% endblock %}

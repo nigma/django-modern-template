@@ -1,0 +1,87 @@
+{% load static i18n compress %}{% load url from future %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="imagetoolbar" content="false" />
+    <title>{% block head_title_base %}{% block head_title %}{% endblock %} | {% trans "Project Name" %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" />
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+    {% block style_base %}
+        {% include "assets/styles.html" %}
+        {% block extra_style %}{% endblock %}
+    {% endblock %}
+
+    {% block extra_head_base %}
+        {% compress js %}
+            <script src="{% static "components/sprockets-modernizr/modernizr.js" %}"></script>
+        {% endcompress %}
+        {% block extra_head %}{% endblock %}
+    {% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}"
+    {% block body_attrs %}{% endblock %}
+    id="{% block body_id %}{% endblock %}">
+    <div id="wrap">
+
+        {% block topbar_base %}
+        <header id="top-header">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        {% block topbar %}
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </a>
+                            {% block site_brand %}<a class="brand" href="{% url "home" %}">{% trans "Project Name" %}</a>{% endblock %}
+                            <div class="nav-collapse">
+                                {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% endblock %}
+
+        <div class="container">
+            <div id="messages-area">{% include "_messages.html" %}</div>
+            {% block ieprompt %}{% endblock %}
+            <div id="loading" class="loader" style="display: none;">{% trans "Loading" %}…</div>
+
+            {% block page_header_base %}
+                {% block page_header %}{% endblock %}
+            {% endblock %}
+
+            <div class="row">
+                {% block content_base %}{% endblock %}
+            </div>
+        </div>
+
+        <div id="push"></div>{# sticky footer push #}
+    </div>{# /wrap #}
+
+    {% block footer_base %}
+        <footer id="footer">
+            {% block footer %}{% include "_footer.html" %}{% endblock %}
+        </footer>
+    {% endblock %}
+
+    {% block script_base %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{% static "components/jquery/jquery.js" %}"><\/script>')</script>
+        {% include "assets/scripts.html" %}
+        {% block extra_script %}{% endblock %}
+    {% endblock %}
+
+    {% block extra_body_base %}
+        {% block extra_body %}{% endblock %}
+    {% endblock %}
+
+    {% block modal_base %}{% endblock %}
+</body>
+</html>

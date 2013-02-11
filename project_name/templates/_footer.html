@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load url from future %}
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <p class="muted credit">
+                Copyright &copy; <a href="/">{% trans "Project Name" %}</a> |
+                <a href="{% url "about:about" %}">{% trans "About" %}</a> |
+                <a href="{% url "about:terms" %}">{% trans "Terms of Use" %}</a> |
+                <a href="{% url "about:privacy" %}">{% trans "Privacy Policy" %}</a> |
+                <a href="{% url "account_signup" %}">{% trans "Sign Up" %}</a>
+            </p>
+        </div>
+    </div>
+</div>

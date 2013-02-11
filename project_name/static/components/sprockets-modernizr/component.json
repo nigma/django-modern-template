@@ -1,0 +1,13 @@
+{
+  "name": "sprockets-modernizr",
+  "version": "2.6.2",
+  "main": "./modernizr.js",
+  "gitHead": "eaf8c4eada44f4a07cd3f97428aa5753138ecb62",
+  "_id": "modernizr@2.6.2",
+  "readme": "ERROR: No README.md file found!",
+  "description": "ERROR: No README.md file found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/josh/sprockets-modernizr.git"
+  }
+}

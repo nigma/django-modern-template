@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "backbone": "~0.9.10",
+    "underscore": "~1.4.4",
+    "bootstrap": "~2.3.0",
+    "json2": "latest",
+    "sprockets-modernizr": "~2.6.2"
+  }
+}

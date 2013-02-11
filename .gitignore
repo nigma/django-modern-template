@@ -1,4 +1,10 @@
-*.log
-*.pot
-*.pyc
-local_settings.py
+*.py[co]
+
+*~
+*#*
+.DS*
+.idea
+
+media
+static_collected
+static/cache

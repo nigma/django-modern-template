@@ -17,24 +17,32 @@ Prerequisites
 - Python 2.7
 - PostgreSQL
 - Node.js, npm and lessc for .less development
+- AWS S3 storage account (see ``docs/deploy-on-heroku.rst``)
 
 Setup project
 -------------
 
 Prepare project
 """""""""""""""
-::
+
+Start with creating a new Django project based on this project template::
 
     django-admin.py startproject --template=https://github.com/nigma/django-modern-template/zipball/master <project_name>
-
     cd <project_name>
+
+This will set up and preconfigure your project. Now amend domain and site name
+settings in ``conf/prod.py`` and ``conf/dev.py`` and you are ready for
+the initial commit::
+
     git init
     git add .
     git commit -m "Initial commit"
 
 Set heroku env
 """"""""""""""
-::
+
+Once your project structure is ready, the next step is to create and configure
+a heroku instance::
 
     heroku create
 
@@ -47,10 +55,7 @@ Set heroku env
 
     heroku labs:enable user-env-compile
 
-
-Install heroku addons
-"""""""""""""""""""""
-::
+As well as enable basic addons for database, cache and mail::
 
     heroku addons:add heroku-postgresql:dev
     heroku addons:add pgbackups:auto-month
@@ -61,13 +66,19 @@ Install heroku addons
 
 Push and migrate
 """"""""""""""""
-::
+
+You should now be ready to deploy your new project to heroku::
 
     git push heroku master
     heroku run python manage.py syncdb
     heroku run python manage.py migrate
 
-See docs/deploy-on-heroku.rst for more info.
+See ``docs/deploy-on-heroku.rst`` for more info.
+
+Out of the box
+""""""""""""""
+
+This is what you get: `dmt.herokuapp.com <http://dmt.herokuapp.com>`_
 
 Commercial Support
 ------------------

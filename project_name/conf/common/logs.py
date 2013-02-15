@@ -59,6 +59,11 @@ LOGGING = {
             "level": "INFO",
             "propagate": False,
         },
+        "django.startup": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
         "django.request": {
             "handlers": ["console", "mail_admins"],
             "level": "ERROR"

@@ -30,9 +30,24 @@ Start with creating a new Django project based on this project template::
     django-admin.py startproject --template=https://github.com/nigma/django-modern-template/zipball/master <project_name>
     cd <project_name>
 
-This will set up and preconfigure your project. Now amend domain and site name
-settings in ``conf/prod.py`` and ``conf/dev.py`` and you are ready for
-the initial commit::
+This will set up and preconfigure your project. Now amend the domain
+and site name settings in the ``conf/prod.py``and ``conf/dev.py``
+files and you are almost ready for the first commit.
+
+**Note:** the ``startproject`` command seems to skip the
+``.heroku/collectstatic_disabled`` source file while copying files
+from the template. If the ``.heroku`` directory  is not present in the generated
+project root directory, just create it manually and add an empty file
+named ``collectstatic_disabled``::
+
+    mkdir .heroku
+    touch .heroku/collectstatic_disabled
+
+First commit
+""""""""""""
+
+After configuring the project settings you are ready for the
+initial commit::
 
     git init
     git add .
